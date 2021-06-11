@@ -164,7 +164,7 @@
 			elements.events.appendChild(elements.actions);
 			elements.addButton = document.createElement("input");
 			elements.addButton.type = "button";
-			elements.addButton.value = "Add";
+			elements.addButton.value = "Add TESTING AGAIN";
 			elements.actions.appendChild(elements.addButton);
 
 			var events = {};
@@ -272,8 +272,11 @@
 					calendar.select(current);
 				}
 
+				// FIXME: testing to see that only one event can be added
 				// Add event
+				if(events[id].length === 0) {
 				events[id].push({name : name});
+				}
 
 				// Refresh events
 				showEvents(current);
