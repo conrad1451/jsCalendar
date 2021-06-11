@@ -183,7 +183,7 @@
 				// Add events on list
 				if (events.hasOwnProperty(id) && events[id].length) {
 					// Number of events
-					elements.subtitle.textContent = events[id].length + " " + ((events[id].length > 1) ? "events" : "event");
+					elements.subtitle.textContent = "Today's event";
 
 					var div;
 					var close;
@@ -191,7 +191,7 @@
 					for (var i = 0; i < events[id].length; i++) {
 						div = document.createElement("div");
 						div.className = "event-item";
-						div.textContent = (i + 1) + ". " + events[id][i].name;
+						div.textContent = events[id][i].name;
 						elements.list.appendChild(div);
 						close = document.createElement("div");
 						close.className = "close";
