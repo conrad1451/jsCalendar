@@ -265,16 +265,22 @@
 				{
 					events[id][0] = {name : "no1"};
 				}
+				
+				// Refresh events
+				showEvents(current);
 			})
 								  
 			elements.testButton.addEventListener("click", function(){
 				if(events[id].length === 0) {
-					events[id].push({name : "yes2"});
+					events[id].push({"yes2"});
 				}
 				else
 				{
-					events[id][0] = {name : "no2"};
+					events[id][0] = {"no2"};
 				}
+				
+				// Refresh events
+				showEvents(current);
 			})
 
 			elements.addButton.addEventListener("click", function(){
