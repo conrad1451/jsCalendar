@@ -162,10 +162,23 @@
 			elements.actions = document.createElement("div");
 			elements.actions.className = "action";
 			elements.events.appendChild(elements.actions);
+			
+			
 			elements.addButton = document.createElement("input");
 			elements.addButton.type = "button";
-			elements.addButton.value = "Add / Replace Event";
+			elements.addButton.value = "Add / Replace Event"; 
 			elements.actions.appendChild(elements.addButton);
+			
+			
+			elements.testButton = document.createElement("input");
+			elements.testButton.type = "button";
+			elements.testButton.value = "Test button 1"; 
+			elements.actions.appendChild(elements.testButton);
+			
+			elements.otherTestButton = document.createElement("input");
+			elements.otherTestButton.type = "button";
+			elements.otherTestButton.value = "Test button 2"; 
+			elements.actions.appendChild(elements.otherTestButton);
 
 			var events = {};
 			var date_format = "MMM DD YYYY";
@@ -243,6 +256,26 @@
 				// Show events
 				showEvents(date);
 			});
+			
+			elements.otherTestButton.addEventListener("click", function(){
+				if(events[id].length === 0) {
+					events[id].push({name : "yes1"});
+				}
+				else
+				{
+					events[id][0] = {name : "no1"};
+				}
+			})
+								  
+			elements.testButton.addEventListener("click", function(){
+				if(events[id].length === 0) {
+					events[id].push({name : "yes2"});
+				}
+				else
+				{
+					events[id][0] = {name : "no2"};
+				}
+			})
 
 			elements.addButton.addEventListener("click", function(){
 				// Get event name
